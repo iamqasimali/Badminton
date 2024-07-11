@@ -23,16 +23,26 @@ export default {
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      fontFamily: {
+        'dm-sans': ['DM Sans', 'sans-serif'],
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
         'green': "#A1D800",
+        "darkgreen": "#387000",
         'white': '#ffffff',
-        'gray': "#F5F6FA"
+        'gradient-theme': 'linear-gradient(#346A04, #A1D800   )',
       },
       boxShadow: {
         'custom': '0px 5px 10px 0px #6177E959',
-      }
+      },
+      backgroundImage: {
+        'gradient-theme': 'linear-gradient(#346A04, #A1D800)',
+      },
+      outline: {
+        green: '5px solid #A1D800', // Define a custom outline
+      },
     },
     
   },

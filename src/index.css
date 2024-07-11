@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.bg-custom {
+    background-image: url('../src/assets/images/BG.png');
+}
+
+.bg-custom-lg {
+  background-image: url('../src/assets/images/lg-bg.png');
+}

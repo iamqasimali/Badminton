@@ -1,42 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import BlackLogo from "../../assets/images/BlackLogo.png";
-import { Link } from "react-router-dom";
 
-const Signin = () => {
+const Signup = () => {
+  const [inputValues, setInputValues] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [focusedField, setFocusedField] = useState("");
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const handleFocus = (field) => {
+    setFocusedField(field);
+  };
+
+  const handleBlur = () => {
+    setFocusedField("");
+  };
+
+  const isFieldActive = (field) => {
+    return inputValues[field] || focusedField === field;
+  };
+
   return (
-    <div className="w-screen h-screen bg-custom bg-cover bg-center bg-no-repeat relative">
+    <div className="w-screen h-screen bg-green">
       <div className="w-full h-full flex">
         <div className="bg-green w-1/2 h-full hidden sm:flex items-center justify-center">
           <img src={Logo} />
         </div>
         <div className="bg-white w-full sm:w-1/2 h-full flex items-center justify-center ">
           <div className="grid">
-            <div className="mb-16  hidden sm:block">
-              <p className=" text-black font-dm-sans text-[32px] font-bold leading-[41.66px] text-center">
-                Welcome Back!
-              </p>
-              <p className="text-xs text-gray-400 font-dm-sans text-[15px] font-normal leading-[18.23px] text-center">
-                Please Enter your details
-              </p>
-            </div>
-
             <div className="flex flex-col items-center justify-center  w-full sm:hidden mb-[90px]">
               <img className="" width="75" height="75" src={BlackLogo} />
               <p className="text-darkgreen font-dm-sans text-[38px] font-[700px] leading-[26px] py-2 my-2 ">
-                Badminton{" "}
+                Badminton
               </p>
             </div>
 
             <div className="w-full sm:w-[365px]">
-              <p className=" text-black font-dm-sans text-[20px]  leading-[26.04px] text-center">
-                Please Signin To Continue
+              <p className=" text-black font-dm-sans text-[32px] font-medium leading-[41.66px] text-center">
+                Create An Account
               </p>
               <p className="text-xs text-gray-400 font-dm-sans text-[15px] font-normal leading-[19.53px] text-center">
-                Please enter your details below
+                Fill in your details
               </p>
 
               <form className="flex flex-col">
+                <div className="my-4 relative">
+                  <svg
+                    className="absolute left-3 top-2/4 transform -translate-y-2/4"
+                    width="18"
+                    height="20"
+                    viewBox="0 0 18 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 15.8333C0 19.2646 1.5885 20 9 20C16.4115 20 18 19.2646 18 15.8333C18 12.4021 16.4115 11.6667 9 11.6667C1.5885 11.6667 0 12.4021 0 15.8333Z"
+                      fill={isFieldActive("name") ? "#A1D800" : "#0B0B0B"}
+                      fill-opacity={isFieldActive("name") ? "1" : "0.3"}
+                    />
+                    <path
+                      d="M4.09091 5C4.09091 7.76142 6.28878 10 9 10C11.7112 10 13.9091 7.76142 13.9091 5C13.9091 2.23858 11.7112 0 9 0C6.28878 0 4.09091 2.23858 4.09091 5Z"
+                      fill={isFieldActive("name") ? "#A1D800" : "#0B0B0B"}
+                      fill-opacity={isFieldActive("name") ? "1" : "0.3"}
+                    />
+                  </svg>
+
+                  <input
+                    type="text"
+                    className={`bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px] outline-green ${
+                      focusedField === "name" ? "border border-green" : ""
+                    }`}
+                    placeholder="Enter Name"
+                    name="name"
+                    value={inputValues.name}
+                    onChange={handleInputChange}
+                    onFocus={() => handleFocus("name")}
+                    onBlur={handleBlur}
+                  />
+                </div>
+
                 <div className="my-4 relative">
                   <svg
                     className="absolute left-3 top-2/4 transform -translate-y-2/4"
@@ -48,19 +101,26 @@ const Signin = () => {
                   >
                     <path
                       d="M10 18C1.765 18 0 16.4115 0 9C0 6.96306 0.133318 5.36595 0.497629 4.12078C1.43044 5.03897 2.60755 6.1431 3.88606 7.12657C5.69935 8.52141 7.89544 9.81818 10 9.81818C12.1046 9.81818 14.3007 8.52141 16.1139 7.12657C17.3925 6.1431 18.5696 5.03897 19.5024 4.12078C19.8667 5.36595 20 6.96306 20 9C20 16.4115 18.235 18 10 18Z"
-                      fill="#0B0B0B"
-                      fill-opacity="0.3"
+                      fill={isFieldActive("email") ? "#A1D800" : "#0B0B0B"}
+                      fill-opacity={isFieldActive("email") ? "1" : "0.3"}
                     />
                     <path
                       d="M18.7761 2.51436C17.7997 3.49144 16.5045 4.74736 15.0861 5.83847C13.2993 7.21286 11.4954 8.18182 10 8.18182C8.50456 8.18182 6.70065 7.21286 4.91394 5.83847C3.4955 4.74736 2.20035 3.49144 1.22388 2.51436C2.54742 0.550308 5.153 0 10 0C14.847 0 17.4526 0.550308 18.7761 2.51436Z"
-                      fill="#0B0B0B"
-                      fill-opacity="0.3"
+                      fill={isFieldActive("email") ? "#A1D800" : "#0B0B0B"}
+                      fill-opacity={isFieldActive("email") ? "1" : "0.3"}
                     />
                   </svg>
                   <input
                     type="text"
-                    className="bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px]"
+                    className={`bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px] outline-green ${
+                      focusedField === "email" ? "border border-green" : ""
+                    }`}
                     placeholder="Email address"
+                    name="email"
+                    value={inputValues.email}
+                    onChange={handleInputChange}
+                    onFocus={() => handleFocus("email")}
+                    onBlur={handleBlur}
                   />
                 </div>
 
@@ -75,37 +135,44 @@ const Signin = () => {
                   >
                     <path
                       d="M8.33333 12.5C8.33333 13.4205 9.07952 14.1667 10 14.1667C10.9205 14.1667 11.6667 13.4205 11.6667 12.5C11.6667 11.5795 10.9205 10.8333 10 10.8333C9.07952 10.8333 8.33333 11.5795 8.33333 12.5Z"
-                      fill="#0B0B0B"
-                      fill-opacity="0.3"
+                      fill={isFieldActive("password") ? "#A1D800" : "#0B0B0B"}
+                      fill-opacity={isFieldActive("password") ? "1" : "0.3"}
                     />
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M13.9911 1.46049C15.0403 2.39308 15.7358 3.74521 15.8238 5.46024C19.1407 6.24353 20 8.19054 20 12.5C20 18.6762 18.235 20 10 20C1.765 20 0 18.6762 0 12.5C0 8.19054 0.859291 6.24353 4.17615 5.46024C4.26423 3.74521 4.9597 2.39308 6.00886 1.46049C7.11764 0.474914 8.57244 0 10 0C11.4276 0 12.8824 0.474914 13.9911 1.46049ZM10 5C8.38793 5 7.02381 5.05073 5.87232 5.17865C6.00779 4.07798 6.48449 3.26764 7.11614 2.70617C7.88236 2.02509 8.92756 1.66667 10 1.66667C11.0724 1.66667 12.1176 2.02509 12.8839 2.70617C13.5155 3.26764 13.9922 4.07798 14.1277 5.17865C12.9762 5.05073 11.6121 5 10 5ZM6.66667 12.5C6.66667 14.3409 8.15905 15.8333 10 15.8333C11.8409 15.8333 13.3333 14.3409 13.3333 12.5C13.3333 10.6591 11.8409 9.16667 10 9.16667C8.15905 9.16667 6.66667 10.6591 6.66667 12.5Z"
-                      fill="#0B0B0B"
-                      fill-opacity="0.3"
+                      fill={isFieldActive("password") ? "#A1D800" : "#0B0B0B"}
+                      fill-opacity={isFieldActive("password") ? "1" : "0.3"}
                     />
                   </svg>
 
                   <input
                     type="password"
-                    className="bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px]"
+                    className={`bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px] outline-green ${
+                      focusedField === "password" ? "border border-green" : ""
+                    }`}
                     placeholder="Password"
+                    name="password"
+                    value={inputValues.password}
+                    onChange={handleInputChange}
+                    onFocus={() => handleFocus("password")}
+                    onBlur={handleBlur}
                   />
                 </div>
 
-                <Link to="/accountCreated" className=" bg-green text-white text-lg font-sans rounded-md text-center px-3 py-2 mt-2 mb-2 shadow-custom">
-                  Sign in
+                <Link to="/accountCreated" className="w-full bg-green text-white text-lg font-sans rounded-md text-center px-3 py-2 mt-2 mb-2 shadow-custom">
+                  Create An Account
                 </Link>
               </form>
             </div>
 
-            <p className="font-dm-sans text-gray-400 text-center text-[15px] leading-[19.53px] font-normal py-4">
+            <p className="font-dm-sans text-gray-400 text-center text-[15px] leading-[19.53px] font-normal py-4 cursor-pointer">
               or continue
             </p>
 
             <div className="flex items-center justify-around my-5">
-              <div className="bg-gray-100 bg-custom-color rounded-full p-2 w-[55px] h-[55px] flex justify-center items-center">
+              <div className="bg-gray-100 rounded-full p-2 w-[55px] h-[55px] flex justify-center items-center cursor-pointer">
                 <svg
                   className=""
                   width="25"
@@ -133,7 +200,7 @@ const Signin = () => {
                 </svg>
               </div>
 
-              <div className="bg-gray-100 rounded-full p-2 w-[55px] h-[55px] flex justify-center items-center">
+              <div className="bg-gray-100 rounded-full p-2 w-[55px] h-[55px] flex justify-center items-center cursor-pointer">
                 <svg
                   width="21"
                   height="25"
@@ -148,7 +215,7 @@ const Signin = () => {
                 </svg>
               </div>
 
-              <div className="bg-gray-100 rounded-full p-2 w-[55px] h-[55px] flex justify-center items-center">
+              <div className="bg-gray-100 rounded-full p-2 w-[55px] h-[55px] flex justify-center items-center cursor-pointer">
                 <svg
                   width="25"
                   height="25"
@@ -168,8 +235,11 @@ const Signin = () => {
               </div>
             </div>
 
-            <Link to="/signup" className="font-dm-sans text-black text-center text-[15px] leading-[19.53px] font-normal my-6 hover:text-green">
-              Don't have an account? Create an account
+            <Link
+              to="/signin"
+              className="font-dm-sans text-center text-black text-[15px] leading-[19.53px] font-normal my-6 cursor-pointer hover:text-green"
+            >
+              Already have an account? Signin
             </Link>
           </div>
         </div>
@@ -178,4 +248,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;
