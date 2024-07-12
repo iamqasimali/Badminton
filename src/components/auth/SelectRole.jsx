@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/images/logo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom"
 import BlackLogo from "../../assets/images/BlackLogo.png";
 
 const SelectRole = () => {
@@ -47,11 +48,11 @@ const SelectRole = () => {
                     <g filter="url(#filter0_d_1_8365)">
                       <path
                         d="M55.5 61.7346C65.8658 61.7346 74.2693 53.5114 74.2693 43.3674C74.2693 33.2233 65.8658 25 55.5 25C45.134 25 36.7307 33.2233 36.7307 43.3674C36.7307 53.5114 45.134 61.7346 55.5 61.7346Z"
-                        fill={` ${role == "player" ? "#A1D800" : "white" }`}
+                        fill={` ${role == "player" ? "#A1D800" : "white"}`}
                       />
                       <path
                         d="M65.2756 69.3882H45.7244C34.3846 69.3882 25 78.5723 25 89.6689C25 92.3476 26.1731 94.6437 28.5192 95.7916C32.0384 97.7048 39.859 100 55.5 100C71.1412 100 78.9614 97.7048 82.4807 95.7916C84.4357 94.6437 86 92.3476 86 89.6689C86 78.1894 76.6155 69.3882 65.2756 69.3882Z"
-                        fill={` ${role == "player" ? "#A1D800" : "white" }`}
+                        fill={` ${role == "player" ? "#A1D800" : "white"}`}
                       />
                     </g>
                     <defs>
@@ -102,12 +103,15 @@ const SelectRole = () => {
                 </p>
               </div>
 
-              <div className="w-full flex flex-col justify-center items-center cursor-pointer"
-               onClick={() => handleClick("organizer")}
-               >
-                <div className={`${
+              <div
+                className="w-full flex flex-col justify-center items-center cursor-pointer"
+                onClick={() => handleClick("organizer")}
+              >
+                <div
+                  className={`${
                     role == "organizer" ? "outline  outline-green" : ""
-                  } sm:w-[175px] w-[120px] sm:h-[175px] h-[120px] bg-gray-100 rounded-full border-5 flex justify-center items-center`}>
+                  } sm:w-[175px] w-[120px] sm:h-[175px] h-[120px] bg-gray-100 rounded-full border-5 flex justify-center items-center`}
+                >
                   <svg
                     width="111"
                     height="125"
@@ -118,12 +122,11 @@ const SelectRole = () => {
                     <g filter="url(#filter0_d_1_8365)">
                       <path
                         d="M55.5 61.7346C65.8658 61.7346 74.2693 53.5114 74.2693 43.3674C74.2693 33.2233 65.8658 25 55.5 25C45.134 25 36.7307 33.2233 36.7307 43.3674C36.7307 53.5114 45.134 61.7346 55.5 61.7346Z"
-                        
-                        fill={` ${role == "organizer" ? "#A1D800" : "white" }`}
+                        fill={` ${role == "organizer" ? "#A1D800" : "white"}`}
                       />
                       <path
                         d="M65.2756 69.3882H45.7244C34.3846 69.3882 25 78.5723 25 89.6689C25 92.3476 26.1731 94.6437 28.5192 95.7916C32.0384 97.7048 39.859 100 55.5 100C71.1412 100 78.9614 97.7048 82.4807 95.7916C84.4357 94.6437 86 92.3476 86 89.6689C86 78.1894 76.6155 69.3882 65.2756 69.3882Z"
-                        fill={` ${role == "organizer" ? "#A1D800" : "white" }`}
+                        fill={` ${role == "organizer" ? "#A1D800" : "white"}`}
                       />
                     </g>
                     <defs>
@@ -174,12 +177,15 @@ const SelectRole = () => {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <div className="w-full flex flex-col justify-center items-center cursor-pointer"
-              onClick={() => handleClick("both")}
+              <div
+                className="w-full flex flex-col justify-center items-center cursor-pointer"
+                onClick={() => handleClick("both")}
               >
-                <div className={`${
+                <div
+                  className={`${
                     role == "both" ? "outline outline-green" : ""
-                  } sm:w-[175px] w-[120px] sm:h-[175px] h-[120px] bg-gray-100 rounded-full border-5 flex justify-center items-center`}>
+                  } sm:w-[175px] w-[120px] sm:h-[175px] h-[120px] bg-gray-100 rounded-full border-5 flex justify-center items-center`}
+                >
                   <svg
                     width="111"
                     height="125"
@@ -190,11 +196,11 @@ const SelectRole = () => {
                     <g filter="url(#filter0_d_1_8365)">
                       <path
                         d="M55.5 61.7346C65.8658 61.7346 74.2693 53.5114 74.2693 43.3674C74.2693 33.2233 65.8658 25 55.5 25C45.134 25 36.7307 33.2233 36.7307 43.3674C36.7307 53.5114 45.134 61.7346 55.5 61.7346Z"
-                        fill={` ${role == "both" ? "#A1D800" : "white" }`}
+                        fill={` ${role == "both" ? "#A1D800" : "white"}`}
                       />
                       <path
                         d="M65.2756 69.3882H45.7244C34.3846 69.3882 25 78.5723 25 89.6689C25 92.3476 26.1731 94.6437 28.5192 95.7916C32.0384 97.7048 39.859 100 55.5 100C71.1412 100 78.9614 97.7048 82.4807 95.7916C84.4357 94.6437 86 92.3476 86 89.6689C86 78.1894 76.6155 69.3882 65.2756 69.3882Z"
-                        fill={` ${role == "both" ? "#A1D800" : "white" }`}
+                        fill={` ${role == "both" ? "#A1D800" : "white"}`}
                       />
                     </g>
                     <defs>
@@ -244,6 +250,10 @@ const SelectRole = () => {
                 </p>
               </div>
             </div>
+
+            <Link to="/playerInfo" className="my-6 cursor-pointer text-[24px] font-dm-sans underline border-1 p-2">
+              Next
+            </Link>
           </div>
         </div>
       </div>
