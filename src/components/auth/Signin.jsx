@@ -23,7 +23,7 @@ const Signin = () => {
 
             <div className="flex flex-col items-center justify-center  w-full sm:hidden mb-[90px]">
               <img className="" width="75" height="75" src={BlackLogo} />
-              <p className="text-darkgreen font-dm-sans text-[38px] font-[700px] leading-[26px] py-2 my-2 ">
+              <p className="text-darkgreen font-dm-sans text-[38px] font-[700] leading-[26px] py-2 my-2 ">
                 Badminton{" "}
               </p>
             </div>

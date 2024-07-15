@@ -33,7 +33,7 @@ const Signup = () => {
 
   return (
     <div className="w-screen h-screen bg-green">
-      <div className="w-full h-full flex">
+      <div className="w-fullh-full flex flex-wrap my-6">
         <div className="bg-green w-1/2 h-full hidden sm:flex items-center justify-center">
           <img src={Logo} />
         </div>
