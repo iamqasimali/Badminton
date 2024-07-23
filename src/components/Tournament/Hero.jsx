@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="w-full h-[387px] bg-green pl-24 pt-8 flex justify-between items-start flex-wrap">
+    <div className="w-full h-[387px] bg-green pl-24 pt-14 flex justify-between items-start flex-wrap">
       <div className="flex-grow-1 w-[65%] h-full basis-[200]">
         <div className="w-[832px]">
           <div
@@ -22,7 +22,7 @@ const Hero = () => {
           <p className="text-darkgreen font-dm-sans text-[42px] font-[700] leading-[52.08px]">
             Tournament, Summer, Top League
           </p>
-          <div className="w-full mt-20 flex justify-start gap-2 items-center flex-wrap">
+          <div className="w-full mt-14 flex justify-start gap-2 items-center flex-wrap">
             <p
               className="font-dm-sans text-darkgreen text-[16px] font-[500] leading-[19.84px]
           bg-white rounded-md p-2   "

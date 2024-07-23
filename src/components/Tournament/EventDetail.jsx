@@ -166,7 +166,7 @@ const EventDetail = () => {
           Event Outline
         </p>
 
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
+        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] mt-12 pb-1">
           ◆Event Date 1◆
         </p>
         <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px]">
@@ -183,7 +183,7 @@ const EventDetail = () => {
           Women
         </p>
 
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
+        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] mt-12 pb-1">
           ◆Event Date 2◆
         </p>
         <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px]">
@@ -200,37 +200,34 @@ const EventDetail = () => {
           Women
         </p>
 
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
+        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] mt-12">
           ◆Match Day Schedule◆
         </p>
-        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px]">
+        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px] my-1">
           Doors open at 9:00, reception from 9:00 to 9:45, match starts at 10:00
           (scheduled)
         </p>
 
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
+        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] mt-12">
           ◆Entry Acceptance Period◆
         </p>
-        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px]">
+        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px] py-1">
           May 27, 2024 (Monday) - July 12, 2024 (Friday)
         </p>
 
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
+        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] mt-12">
           ◆Format Competition◆
         </p>
-        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px]">
+        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px] py-1 ">
           Qualifying League Format
         </p>
 
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
-          ◆Participants◆
-        </p>
-
-        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] my-7">
+        
+        <p className="font-dm-sans text-[24px] font-[500] leading-[31.68px] mt-12">
           ◆3rd Place Match◆
         </p>
 
-        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px]">
+        <p className="text-gray-500 font-dm-sans text-[24px] font-[500] leading-[31.68px] py-1">
           None
         </p>
       </div>
