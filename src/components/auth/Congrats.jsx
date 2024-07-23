@@ -27,7 +27,7 @@ const Congrats = ({}) => {
           </p>
 
           <Link
-            to="/selectRole"
+            to="/"
             className="w-[335px] bg-green text-white text-xl font-sans font-thin rounded-md text-center px-3 py-2 mt-4 mb-4 drop-shadow-sm cursor-pointer shadow-custom flex justify-between items-center "
           >
             <p>Continue</p>
@@ -76,7 +76,7 @@ const Congrats = ({}) => {
         </div>
         <div className="flex flex-wrap   justify-center items-center">
           <Link
-            to="/selectRole"
+            to="/"
             className="rounded-md bg-white text-darkgreen text-center w-4/5 h-[44px] my-2 cursor-pointer shadow-custom mt-12 flex justify-between items-center p-3"
           >
             <p>Continue</p>

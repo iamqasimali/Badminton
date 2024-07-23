@@ -24,6 +24,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        'sans': ['DM Sans', 'sans-serif'],
         'dm-sans': ['DM Sans', 'sans-serif'],
       },
       colors: {

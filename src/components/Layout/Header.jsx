@@ -49,7 +49,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="col-span-2 col-start-4 sm:col-start-9 flex justify-center items-center ">
-          <Link className="hidden sm:block bg-darkgreen rounded-[28px] border-2 border-white py-[13px] px-[24px] text-white text-[16px] font-dm-sans font-[700px] leading-[22.08px] text-center ">
+          <Link to="/welcome" className="hidden sm:block bg-darkgreen rounded-[28px] border-2 border-white py-[13px] px-[24px] text-white text-[16px] font-dm-sans font-[700px] leading-[22.08px] text-center ">
             Sign up Now
           </Link>
           <div className="block sm:hidden">

@@ -12,6 +12,7 @@ import Dashboard from "./components/Pages/Dashboard"
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
 import TermsAndServices from "./components/Pages/TermsAndServices";
 import Faqs from "./components/Pages/Faqs";
+import Tournament from "./components/Pages/Tournament";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-services" element={<TermsAndServices />} />
             <Route path="/faqs" element={<Faqs />} />
-            
+            <Route path="/tournament-details" element={<Tournament />} />
           </Routes>
         </Router>
       </div>
