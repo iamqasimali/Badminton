@@ -1,9 +1,37 @@
 import React from "react";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import Logo from "../../assets/images/logo.png";
 import BlackLogo from "../../assets/images/BlackLogo.png";
 import { Link } from "react-router-dom";
 
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Hook from react-router-dom for navigation
+
+
+
+  const login = async () => {
+    try {
+      console.log(email, password);
+      const { data } = await axios.post("http://localhost:3000/auth/login", {
+        email,
+        password,
+      });
+
+      console.log(data);
+      if (data.error) {
+        alert(data.error.message);
+      }
+
+      navigate("/"); // Redirect to the root page
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="w-screen h-screen bg-custom bg-cover bg-center bg-no-repeat relative">
       <div className="w-full h-full flex">
@@ -58,12 +86,17 @@ const Signin = () => {
                     />
                   </svg>
                   <input
-                    type="text"
+                    id="email"
+                    name="email"
+                    type="email"
                     className="bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px]"
                     placeholder="Email address"
+                    required
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                   />
                 </div>
-
                 <div className="mb-2 relative">
                   <svg
                     className="absolute left-3 top-2/4 transform -translate-y-2/4"
@@ -88,16 +121,27 @@ const Signin = () => {
                   </svg>
 
                   <input
+                    id="email"
+                    name="password"
                     type="password"
                     className="bg-gray-100 rounded-md text-lg px-10 py-2 w-full h-[50px]"
                     placeholder="Password"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
                   />
                 </div>
 
-                <Link to="/accountCreated" className=" bg-green text-white text-lg font-sans rounded-md text-center px-3 py-2 mt-2 mb-2 shadow-custom">
+                <button
+                  type="button"
+                  className=" bg-green text-white text-lg font-sans rounded-md text-center px-3 py-2 mt-2 mb-2 shadow-custom"
+                  onClick={() => {
+                    login();
+                  }}
+                >
                   Sign in
-                </Link>
-              </form>
+                </button>
+                </form>
             </div>
 
             <p className="font-dm-sans text-gray-400 text-center text-[15px] leading-[19.53px] font-normal py-4">
@@ -168,7 +212,10 @@ const Signin = () => {
               </div>
             </div>
 
-            <Link to="/signup" className="font-dm-sans text-black text-center text-[15px] leading-[19.53px] font-normal my-6 hover:text-green">
+            <Link
+              to="/signup"
+              className="font-dm-sans text-black text-center text-[15px] leading-[19.53px] font-normal my-6 hover:text-green"
+            >
               Don't have an account? Create an account
             </Link>
           </div>
