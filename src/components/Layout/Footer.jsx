@@ -4,8 +4,8 @@ import Logo from "../../assets/images/logo_xsm.png";
 
 const Footer = () => {
   return (
-    <div className="mt-2" >
-      <footer className="w-full h-full">
+    <div className="" >
+      <footer className="w-full h-full ">
       <div className="w-full bg-darkgreen flex justify-around items-center py-5 ">
         <p className="text-white text-[36px] font-dm-sans font-[700px] leading-[44.64px]">
           Download the app
@@ -102,7 +102,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-around items-center py-5 ">
+      <div className="flex justify-around items-center py-16">
         <div>
           <img src={Logo} className="py-2" />
 
@@ -153,48 +153,48 @@ const Footer = () => {
             </svg>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="flex flex-col">
+        <div className="grid grid-cols-3">
+          <div className="flex flex-col gap-3">
             <p className="text-darkgreen text-[18px] font-dm-sans family-[700px] leading-[24.84px]">
               Userful Links
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Family
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               For Players
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               For Tournament Organizers
             </p>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-3">
             <p className="text-darkgreen text-[18px] font-dm-sans family-[700px] leading-[24.84px]">
               Us
             </p>
-            <p className="text-black-500 text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Link#1
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Link#2
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Link#3
             </p>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-3">
             <p className="text-darkgreen text-[18px] font-dm-sans family-[700px] leading-[24.84px]">
               Get Contacts
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Phone: (123) 000-00000
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Email: iamqasimalizahid@gmail.com
             </p>
-            <p className="text-[16px] font-dm-sans family-[700px] leading-[22.08px]">
+            <p className="text-gray-500 text-[16px] font-dm-sans family-[400px] leading-[22.08px]">
               Location: Lahore, PK
             </p>
           </div>
