@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Logo from "../../assets/images/logo.png";
 import BlackLogo from "../../assets/images/BlackLogo.png";
 import { Link } from "react-router-dom";
@@ -26,7 +26,9 @@ const Signin = () => {
         alert(data.error.message);
       }
 
-      navigate("/"); // Redirect to the root page
+      navigate("/",{params: {
+        email: data.email,
+      }  }); // Redirect to the root page
     } catch (error) {
       console.log(error);
     }

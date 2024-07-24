@@ -44,7 +44,7 @@ const Header = () => {
           >
             Terms of Use
           </Link>
-          <Link className="text-white font-dm-sans text-[16px] font-[600px] leading-[22.08px] text-center">
+          <Link to="/contact-us" className="text-white font-dm-sans text-[16px] font-[600px] leading-[22.08px] text-center">
             Contact
           </Link>
         </div>
